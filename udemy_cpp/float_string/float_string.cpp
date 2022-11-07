@@ -156,6 +156,33 @@ void next_previous(){
     cout << endl;
 }
 
+void switch_if() {
+
+    string fbo = "ba r\tf\no o";
+
+    if(auto si=fbo.begin(); si != fbo.end()){
+        cout << *si << endl;
+    }
+
+    int white_space = 0;
+    for(auto c: fbo) {
+        switch(c) {
+            case ' ':
+                [[fallthrough]];
+            case '\t':
+                [[fallthrough]];
+            case '\n':
+                ++white_space;
+                break;
+            default:
+                break;
+        }
+    }
+
+    cout << "Number of whitespace characters in '" << fbo << "' is " << white_space << endl;
+
+    cout << endl;
+}
 
 //Testing out floating point number values 
 int main() {
@@ -163,8 +190,9 @@ int main() {
     // float_string();
     // type_conversion();
     // test_string_literals();
-
-    test_auto();
-    test_iteration();
+    //  test_auto();
+    //  test_iteration();
     next_previous();
+
+    switch_if();
 }
