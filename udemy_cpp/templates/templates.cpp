@@ -25,7 +25,7 @@ class Test {
         }
 };
 
-template <class T>
+template <typename T>
 class DBubble {
 
     T ddata;
