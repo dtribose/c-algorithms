@@ -1,3 +1,8 @@
+/* 
+A list or array or vector of a limited set of values can be sorted in linear time.
+Here I successfully implement a few algorithms to attain this result.
+*/
+
 #include <vector>
 #include <iostream>
 #include <map>
@@ -10,7 +15,9 @@
 
 std::vector <unsigned short int> sort_vec1(const std::vector <unsigned short int> &vec_in) {
 
-    // map should be ordered. If want unordered use unordered_map
+    // map is and ordered dictionary: Insertion should ideally be achieved in logorithmic time
+    // If list is significantly longer than range of values, this should still meet requirement,
+    // since most of time is spent looking up and updating values, as opposed to inserting them.
     std::map<unsigned short int, int> mp;
     for(auto var: vec_in)
         ++mp[var];
@@ -34,7 +41,7 @@ std::vector <unsigned short int> sort_vec1(const std::vector <unsigned short int
 
 std::vector <unsigned short int> sort_vec2(const std::vector <unsigned short int> &vec_in) {
 
-    // use unordered_map for faster inserts
+    // use unordered_map for faster inserts - constant time.
     std::unordered_map<unsigned short int, int> mp;
     for(auto var: vec_in)
         ++mp[var];
